@@ -1,0 +1,57 @@
+{
+	"name": "Promote Yourself Set 1",
+	"version": "4.4",
+	"manifest_version": 2,
+	"description": "Take Control",
+	"icons": 
+	{ 
+		"48": "images/icon48.png",
+		"128": "images/icon128.png"
+	},
+	"background": 
+	{ 
+		"page": "html/background.html"
+	},
+	"browser_action": 
+	{
+		"default_icon": "images/icon.png",
+		"default_title": "Promote Yourself Set 1",   
+		"default_popup": "html/options.html"
+	},
+	"permissions": [
+		"tabs", 
+		"activeTab",
+		"management",
+		"<all_urls>"
+		
+	],
+	"icons": 
+	{ 
+		"48": "images/icon48.png",
+		"128": "images/icon128.png"
+	},
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": ["./js/jquery/jquery-1.7.1.min.js", "./js/jquery/jquery-ui-1.8.21.custom.min.js", "./js/sm/sm.js"],
+			"css": ["/css/smstyle.css"],
+			"all_frames": true
+		},
+		{ "matches": ["*://linkedin.com/*", "*://*.linkedin.com/*"], "js": ["/js/sites/linkedin.js"] },
+		{ "matches": ["*://godaddy.com/*", "*://*.godaddy.com/*"], "js": ["/js/sites/godaddy.js"] },
+		{ "matches": ["*://tumblr.com/*", "*://*.tumblr.com/*"], "js": ["/js/sites/tumblr.js"] },
+		{ "matches": ["*://scribd.com/*", "*://*.scribd.com/*"], "js": ["/js/sites/scribd.js"] },
+		{ "matches": ["*://xing.com/*", "*://*.xing.com/*"], "js": ["/js/sites/xing.js"] },
+		{ "matches": ["*://vimeo.com/*", "*://*.vimeo.com/*"], "js": ["/js/sites/vimeo.js"] },
+		{ "matches": ["*://mail.yahoo.com/*", "*://*.mail.yahoo.com/*", "*://na.edit.yahoo.com/", "*://login.yahoo.com/config/login?.src=flickrsignin*", "*://login.yahoo.com/config/login_verify2?*"], "js": ["/js/sites/createnewaccount.js"] },
+		{ "matches": ["*://plaxo.com/*", "*://*.plaxo.com/*"], "js": ["/js/sites/plaxo.js"] },
+		{ "matches": ["*://weebly.com/*", "*://*.weebly.com/*"], "js": ["/js/sites/weebly.js"] },
+		{ "matches": ["*://professionalontheweb.com/*", "*://*.professionalontheweb.com/*"], "js": ["/js/sites/professionalontheweb.js"] },
+		{ "matches": ["*://secure.tagged.com/*", "*://*.secure.tagged.com/*", "*://tagged.com/*", "*://*.tagged.com/*"], "js": ["/js/sites/tagged.js"] },
+		{ "matches": ["*://dooid.me/*", "*://*.dooid.me/*", "*://pixelhub.me/*", "*://*.pixelhub.me/*"], "js": ["/js/sites/pixelhub.js"] },
+		{ "matches": ["*://slideshare.net/*", "*://*.slideshare.net/*"], "js": ["/js/sites/slideshare.js"] },
+		{ "matches": ["*://follr.com/*", "*://*.follr.com/*"], "js": ["/js/sites/follr.js"] },
+		{ "matches": ["*://google.com/*", "*://*.google.com/*"], "js": ["/js/sites/googlealerts.js"] }
+  ],
+	"web_accessible_resources": ["images/attention.png", "html/urlguide.html", "images/newarrow1.png"]
+}
